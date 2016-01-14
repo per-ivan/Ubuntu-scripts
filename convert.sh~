@@ -1,0 +1,2 @@
+#!/bin/bash
+convert '*.JPG' -resize 800x600 zdjecie%03d.JPG
