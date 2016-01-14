@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Jan, 2016
+#
+# Open in Atom editor as Root to Context Menu
+#
+# created by Per-Ivan
+####################################################################################
+
+if [ -e -n $1 ]; then
+	obj="$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS"
+else
+	base="`echo $NAUTILUS_SCRIPT_CURRENT_URI | cut -d'/' -f3- | sed 's/%20/ /g'`"
+	obj="$base/${1##*/}"
+fi
+
+gksu atom "$obj"
+
+exit 0
